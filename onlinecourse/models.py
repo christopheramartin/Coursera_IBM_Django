@@ -97,9 +97,9 @@ class Enrollment(models.Model):
 
 # Question model
 class Question(models.Model):
-    # Many questions (weak entity) to one lesson
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
-    question_text = models.CharField(max_length=200, default="question")
+    # Many questions (weak entity) to one course
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    question_text = models.CharField(max_length=200)
     grade = models.IntegerField(default=10)
 
     # A provided model method to calculate if learner get the score of the question
@@ -115,7 +115,7 @@ class Question(models.Model):
 class Choice(models.Model):
     # Many choices (weak entity) to one question
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200, default="choice")
+    choice_text = models.CharField(max_length=200)
     is_correct = models.BooleanField()
 
 # Submission model

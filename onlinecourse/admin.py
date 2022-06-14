@@ -18,14 +18,13 @@ class ChoiceInline(admin.StackedInline):
 
 # Model classes
 class CourseAdmin(admin.ModelAdmin):
-    inlines = [LessonInline]
+    inlines = [LessonInline, QuestionInline]
     list_display = ('name', 'pub_date')
     list_filter = ['pub_date']
     search_fields = ['name', 'description']
 
 class LessonAdmin(admin.ModelAdmin):
     list_display = ['title']
-    inlines = [QuestionInline]
 
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [ChoiceInline]
