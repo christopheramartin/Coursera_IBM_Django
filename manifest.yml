@@ -1,11 +1,11 @@
   applications:
   - name: onlinecourse
     routes:
-      - route: host.domain
+      - route: camartin.us-east.mybluemix.net # Host: camartin; Domain: us-east.mybluemix.net 
     memory: 128M
     buildpack: python_buildpack
   - name: onlinecourse-nginx
     routes:
-      - route: host.domain/static
+      - route: camartin.us-east.mybluemix.net/static # Host: camartin; Domain: us-east.mybluemix.net 
     memory: 128M
     buildpack: staticfile_buildpack
