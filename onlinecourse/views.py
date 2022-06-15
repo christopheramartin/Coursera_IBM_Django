@@ -166,7 +166,7 @@ def show_exam_result(request, course_id, submission_id):
         if answered_correctly:
             points_earned += question.grade
     # Calculate grade
-    grade = points_earned / points_possible
+    grade = int(100 * points_earned / points_possible)
     # Add course, selected_ids, and grade to context for rendering HTML page
     context = {}
     context['course'] = course
