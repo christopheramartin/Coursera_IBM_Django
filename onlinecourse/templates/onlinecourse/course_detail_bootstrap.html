@@ -58,13 +58,7 @@
             <button data-toggle="collapse" data-target="#exam" class="btn btn-primary">Start Exam</button>
             
             <div id="exam" class="collapse">
-                <!-- <HINT> Each example will have many questions -->
-                <!-- <HINT> Each question will have many choices -->
-                <!-- <HINT> Create a form to collect the selected choices for all questions -->
-                <!-- <HINT> For each question choice, you may create a checkbox input like
-                <input type="check" name="choice_{{choice.id}}" id="{{choice.id}}" ...>
-                -->
-
+                 
                 <!-- Choice submission form -->
                 <form id="questionform" action="{% url 'onlinecourse:submit' course.id %}" method="post">
                     {% for question in course.question_set.all %}
